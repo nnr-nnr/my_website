@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <title>Razin Site</title>
+    <link rel="stylesheet" href="static/style.css"> 
+    
+    <!-- FOR FONTS -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@700&family=Space+Mono&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,400;1,200&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FOR ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <!-- client-side scripts -->
+    <script lang="text/javascript" src="/static/static.js" defer></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <script>
+        var curve = '{{ curve }}';
+    </script> -->
+
+    <!-- <script type="text/javascript">
+        navigator.registerProtocolHandler("malito", "%s");
+    </script> -->
+
+</head>
+
+
+<body>
+    <aside id="bars">
+        {% for ratio in curve %}
+            <div id = "bar"
+                data-height = {{ratio}}>
+            </div>
+        {% endfor %}
+    </aside>
+    
+    <main>
+        {% include 'includes/navbar.html' %}
+        {% include 'includes/about.html' %}    
+        {% include 'includes/footer.html' %}
+         
+    </main>
+
+</body>
