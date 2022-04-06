@@ -1,38 +1,48 @@
-const switchTabs = ev => {
-    // document.querySelector('#modal-container').innerHTML="";
-
-    const buttonId = ev.currentTarget.getAttribute('data-post-id');
-    
-    console.log(buttonId);
-    // console.log(document.querySelector(new_focus));
-    // document.querySelector(new_focus).focus();
-};
-
 const displayHeader = () => {
-    let html = `
-    <div class="tabs">
-        <div id="current-tab" >
-            <img src="https://www.pngkit.com/png/full/5-52117_oval-drawing-oval-png.png">
-            <button 
-                id="abouttab"
-                onlclick = "switchTabs(event)">
-                about
-            </button>
-        </div>
-        <button 
-            id="projectstab"
-            onlclick = "switchTabs(event)">
-            projects
-        </button>
-        <button 
-            id="randomtab"
-            onlclick = "switchTabs(event)">
-            random
-        </button>
-    </div>
-    `;
+    const tab = document.getElementById("tabs").dataset.tab
 
-    document.querySelector('#header').innerHTML = html; //html;
+    const aboutTab = 
+    `<a 
+        href = "/about" 
+        id="abouttab">
+            about
+    </a>`;
+    const projectsTab = 
+    `<a
+        href = "/projects" 
+        id="projectstab">
+            projects
+    </a>`;
+    const randomTab = 
+    `<a 
+        href = "/random" 
+        id="randomtab">
+            random
+    </a>`;
+    const image = `<img src="https://www.pngkit.com/png/full/5-52117_oval-drawing-oval-png.png">`;
+
+    const currentTab = document.getElementById("current-tab");
+
+    if (tab == "about") {
+        const html = image + aboutTab;
+        currentTab.innerHTML = html;
+
+        currentTab.insertAdjacentHTML("afterend", projectsTab);
+        currentTab.parentNode.insertAdjacentHTML("beforeend", randomTab);
+    } else if (tab == "projects") {
+        currentTab.parentNode.insertAdjacentHTML("afterbegin", aboutTab);
+
+        const html = image + projectsTab;
+        currentTab.innerHTML = html;
+
+        currentTab.parentNode.insertAdjacentHTML("beforeend", randomTab);
+    } else if (tab == "random") {
+        currentTab.parentNode.insertAdjacentHTML("afterbegin", projectsTab);
+        currentTab.parentNode.insertAdjacentHTML("afterbegin", aboutTab);
+        
+        const html = image + randomTab;
+        currentTab.innerHTML = html;
+    }
 };
 
 const displayBars = () => {
@@ -49,29 +59,17 @@ const displayBars = () => {
         </div>
         `;
     }
-    document.querySelector('#bars').innerHTML = html; //html;
+    document.querySelector('#bars').innerHTML = html;
 };
 
-const displayFooter = () => {
-    
-    let html = `
-        <a class = "footerLink" href= "https://www.linkedin.com/in/niva-r/" target="_blank" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-        </a>
-        <a class = "footerLink" href= 'mailto:nivarazin2022@u.northwestern.edu' title="Send me an email!">
-            <i class="fas fa-envelope"> </i>
-        </a>
-        `;
-    document.querySelector('#footer').innerHTML = html; //html;
-};
+
 
 const initPage = () => {
     displayHeader();
     displayBars();
-    displayFooter();
 };
 
 
 
-// invoke init page to display stories:
+// invoke init page to display:
 initPage();

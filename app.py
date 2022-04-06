@@ -11,14 +11,29 @@ app = Flask(__name__)
 # homepage
 @app.route('/')
 def home():
-    return render_template(
-        'index.html',
-        curve = random_curve.hist_()
-    )
+    return redirect('/about')
+    
 
 @app.route('/about')
 def about():
-    return redirect(app.route('/')) # CHECK THIS
+    return render_template(
+        'index.html',
+        curve = random_curve.hist_(),
+        currTab = "about")
+
+@app.route('/projects')
+def projects():
+    return render_template(
+        'projects.html',
+        curve = random_curve.hist_(),
+        currTab = "projects")
+
+@app.route('/random')
+def random():
+    return render_template(
+        'random.html',
+        curve = random_curve.hist_(),
+        currTab = "random")
 
 
 

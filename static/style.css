@@ -1,4 +1,31 @@
 /* *************** */
+/* FRAMEWORK       */
+/* *************** */
+
+body {
+    display: flex;
+    /* justify-content:; */
+    justify-content: space-between;
+    background-image: linear-gradient(to bottom,rgb(179, 243, 105), rgba(230, 74, 235, 0.692));
+    height: 98vh;
+    color:black;
+
+    /* border: blue 2px solid; */
+}
+
+body > * {
+    /* border: red 2px solid; */
+}
+
+aside {
+    position: fixed;
+    height: 100%;
+    /* left: 0;
+    top:0;
+    bottom: 0 */
+}
+
+/* *************** */
 /* BARS ANIMATION  */
 /* *************** */
 
@@ -19,17 +46,17 @@
     0% {
         transform: scaleX(1);
         transform-origin: left;
-        background-color: rgba(230, 74, 235, 0.658);
+        background-color: rgba(230, 74, 235, 0.6);
     }
     50% {
         transform: scaleX(1.6);
         transform-origin: left;
-        background-color: rgba(0, 0, 0, 0.685);
+        background-color: rgba(0, 0, 0, 0.6);
     }
     100% {
         transform: scaleX(1.8);
         transform-origin: left;
-        background-color: rgba(179, 243, 105, 0.685);
+        background-color: rgba(179, 243, 105, 0.6);
     }
 }
 
@@ -37,7 +64,7 @@
 /* NAVIAGATION BAR */
 /* *************** */
 
-.tabs {
+#tabs {
     display: flex;
     align-content:center;
     justify-content: space-between;
@@ -56,14 +83,11 @@
 }
 
 
-.tabs button {
-    /* display: inline-block; */
-    border: none;
-    outline: none;
-    background: none;
-
+#tabs a {
     font-family: 'Space Mono', monospace;
     font-size: x-large;
+    font-weight: 500;
+    text-decoration:none;
 
     padding: 1em;
     padding-right: 1.5em;
@@ -72,7 +96,7 @@
     /* border: solid black 1px; */
 }
 
-button:hover {
+#tabs > a:hover {
     color: rgb(229, 74, 235);
 }
 
@@ -81,67 +105,101 @@ button:hover {
 /*     MAIN        */
 /* *************** */
 
-body {
-    display: flex;
-    background-image: linear-gradient(to bottom,rgb(179, 243, 105), rgba(230, 74, 235, 0.692));
-    height: 100vh;
-    color:black;
-}
-
 main {
+    width: 100%;
+
+    /* border: 2px slateblue solid; */
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 2em;
+    /* padding: 1em; */
     margin: 1em;
     margin-right: 3em;
-    margin-left: 3em;
-    /* border: red 4px solid; */
-    /* margin-left: 1em;
-    margin-right: 1em; */
+    margin-left: 7em;
+    border: red 4px solid;
 }
 
 main > * {
-    /* border: 3px blue solid;  */
+    border: 3px lime solid; 
 }
+
+/* *************** */
+/*     ABOUT       */
+/* *************** */
 
 .about {
     display: flex;
+    flex-direction: column;
     /* border: 2px black solid;  */
 }
 
 .about > * {
-    margin: 2em;
-    /* border: 1px blue solid; */
+    margin: .25em;
+    border: 1px darkcyan solid;
+    display: flex;
+}
+
+.about div > * {
+    margin: 0.5em;
+    border: 1px firebrick solid;
+}
+
+#bio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: right; */
+    align-items:left;
 }
 
 .about img {
-    /* border-radius: 50%; */
-    width: 20%;
+    width: 15%;
     /* height: 25%; */
     object-fit: cover;
-    /* width:200px; */
-    /* height:200px; */
     border: 1px solid black;
-    /* border-image: radial-gradient(to bottom,rgb(179, 243, 105), rgba(230, 74, 235)) ; */
+    /* border-image: linear-gradient(to bottom,rgb(179, 243, 105), rgba(230, 74, 235)) ; */
 }
 
 h1 {
-    justify-self: left;
-    /* font-family: 'Space Mono', monospace; */
     font-family: 'Roboto Mono', monospace;
     font-size: 200%;
-    font-weight: 300;
+    font-weight: 400;
     text-decoration: underline rgb(229, 74, 235);
 }
 
+h2 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: small;
+    font-weight: 400;
+    text-decoration: underline rgb(179, 243, 105);
+}
+
+h3 {
+    justify-self: left;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 100%;
+    font-weight: 400;
+}
+
 .maintext {
-    /* font-family: 'Space Mono', monospace; */
     font-family: 'Roboto Mono', monospace;
     text-align: left; 
-    align-self: center;
+    /* align-self: center; */
     font-weight: 200;
+}
+
+.bodytext {
+    font-family: 'Roboto Mono', monospace;
+    text-align: left; 
+    /* align-self: center; */
+    font-weight: 200;
+    font-size: 75%;
+}
+
+ul {
+    list-style-type: "  +  ";
 }
 
 
@@ -152,7 +210,8 @@ h1 {
 
 #footer {
     border: 1px black solid;
-    padding: 1em;
+    padding: 0.5em;
+    /* position: relative; */
     /* position: absolute;
     bottom: 0; */
 }
@@ -171,9 +230,78 @@ a {
 }
 
 
-a:hover {
+.footerLink:hover {
     color: rgb(179, 243, 105);
-    /* font-size: 2em; */
+}
+
+
+
+/* *************** */
+/*    RANDOM       */
+/* *************** */
+
+.sneak {
+    position: fixed;
+    width:75vw;
+    height: 50vh;
+    background-color: black;
+    bottom: 12vh; 
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* bottom: 0; */
+}
+
+.sneak > .maintext {
+    color: rgb(179, 243, 105);
+    font-size: large;
+}
+
+.sneak:hover {
+    background-color: rgba(0, 0, 0, 0.193);
+}
+
+.random {
+    /* position: fixed; */
+    display: flex;
+    /* justify-content: space-between; */
+    /* align-content: center; */
+}
+
+.filler {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.book { 
+    width: 15vw;
+    padding: 2vw;
+    position: relative;
+    /* top: 0; */
+}
+
+.random div {
+    display: flex;
+    align-content: center;
+}
+
+.random > * {
+    /* border: blueviolet 2px solid; */
+}
+.random div > * {
+    /* border: pink 2px solid; */
+}
+
+.tape {
+    width: 5vw;
+    position: fixed;
+    /* justify-self: right; */
+    /* left:50px; top:20px;  */
+    /* top: 100px; */
+
 }
 
 
