@@ -118,11 +118,11 @@ main {
     margin: 1em;
     margin-right: 3em;
     margin-left: 7em;
-    border: red 4px solid;
+    /* border: red 4px solid; */
 }
 
 main > * {
-    border: 3px lime solid; 
+    /* border: 3px lime solid;  */
 }
 
 /* *************** */
@@ -137,29 +137,26 @@ main > * {
 
 .about > * {
     margin: .25em;
-    border: 1px darkcyan solid;
+    /* border: 1px darkcyan solid; */
     display: flex;
 }
 
 .about div > * {
     margin: 0.5em;
-    border: 1px firebrick solid;
+    /* border: 1px firebrick solid; */
 }
 
 #bio {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: right; */
     align-items:left;
 }
 
 .about img {
     width: 15%;
-    /* height: 25%; */
     object-fit: cover;
     border: 1px solid black;
-    /* border-image: linear-gradient(to bottom,rgb(179, 243, 105), rgba(230, 74, 235)) ; */
 }
 
 h1 {
