@@ -63,6 +63,22 @@ const displayBars = () => {
 };
 
 
+const sneakPeekIn = ev => {
+    document.querySelector('#filler').innerHTML = ``;
+    ev.style.backgroundColor= 'transparent';
+}
+
+const sneakPeekOut = ev => {
+    document.querySelector('#filler').innerHTML = `<p class="maintext">hover for a sneak peek!</p>`;
+    ev.style.backgroundColor= 'black';
+}
+
+// const projectHover = ev => {
+//     ev.border
+// }
+
+
+
 
 const initPage = () => {
     displayHeader();
