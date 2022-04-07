@@ -148,7 +148,7 @@ main > * {
 }
 
 #resume {
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-name: slidein;
 }
 
@@ -213,7 +213,7 @@ ul {
 #footer {
     border: 1px black solid;
     padding: 0.5em;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-name: slidein;
 
     /* position: relative; */
@@ -322,13 +322,13 @@ a {
     padding-top: 1em;
     padding-bottom: 1em;
 
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-name: slidein;
 }
 
 @keyframes slidein {
     from {
-      margin-bottom: -75%;
+      margin-bottom: -50%;
     }
     to {
       margin-bottom: 0%;
