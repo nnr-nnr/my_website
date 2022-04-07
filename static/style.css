@@ -8,11 +8,11 @@ body {
     /* align-items:end; */
     background: linear-gradient(to bottom,rgb(179, 243, 105), rgba(230, 74, 235, 0.692)) no-repeat center center fixed; 
     height: 98vh;
-    border: blue 1px solid;
+    /* border: blue 1px solid; */
 }
 
 body > * {
-    border: red 2px solid;
+    /* border: red 2px solid; */
 }
 
 aside {
@@ -125,12 +125,13 @@ main > * {
 .about {
     display: flex;
     flex-direction: column;
+    
     /* border: 2px black solid;  */
 }
 
 .about > * {
     margin: .25em;
-    border: 1px darkcyan solid;
+    /* border: 1px darkcyan solid; */
     display: flex;
 }
 
@@ -144,6 +145,11 @@ main > * {
     flex-direction: column;
     justify-content: center;
     align-items:left;
+}
+
+#resume {
+    animation-duration: 1.5s;
+    animation-name: slidein;
 }
 
 .about img {
@@ -207,6 +213,9 @@ ul {
 #footer {
     border: 1px black solid;
     padding: 0.5em;
+    animation-duration: 1.5s;
+    animation-name: slidein;
+
     /* position: relative; */
     /* position: absolute;
     bottom: 0; */
@@ -312,6 +321,18 @@ a {
     width: 90%;
     padding-top: 1em;
     padding-bottom: 1em;
+
+    animation-duration: 1.5s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+      margin-bottom: -75%;
+    }
+    to {
+      margin-bottom: 0%;
+    }
 }
 
 .project {
