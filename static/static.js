@@ -73,12 +73,26 @@ const sneakPeekOut = ev => {
     ev.style.backgroundColor= 'black';
 }
 
-// const projectHover = ev => {
-//     ev.border
-// }
 
+// PROJECTS
+const showProject = ev => {
+    const html = `
+    <div class="modal-bg" onclick= "destroyProjectModal(this)">
+        <embed src="https://github.com/nnr-nnr/my_website/blob/a7c3b62f7db3f3955a9a20d9bb2f26e3357e49d0/uploads/pdfs/PCA_Cluster_project.pdf" frameborder="0" width="80%" height="400px">
+        
+    </div>
+    `;
 
+    document.querySelector('#modal-container').innerHTML=html;
+    // document.querySelector('.modal-bg button').focus();
 
+    // document.querySelector('#filler').innerHTML = `<p class="maintext">hover for a sneak peek!</p>`;
+    // ev.style.backgroundColor= 'black';
+}
+
+const destroyProjectModal = ev => {
+    document.querySelector('#modal-container').innerHTML=``;
+}
 
 const initPage = () => {
     displayHeader();
