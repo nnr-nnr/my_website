@@ -1,6 +1,6 @@
 import random
 import numpy as np
-from scipy import rand
+# from scipy import rand
 
 def hist_():
     num_curves = random.randint(2,8)
