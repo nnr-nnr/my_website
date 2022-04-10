@@ -1,1 +1,7 @@
-Flask==1.1.2
+requests==2.23.0            # for testing
+
+python-dotenv==0.15.0       # support for environment variables
+Flask==2.0.2
+Flask-Cors==3.0.8
+Flask-RESTful==0.3.9
+gunicorn==20.0.4
