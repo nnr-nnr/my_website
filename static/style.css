@@ -453,4 +453,24 @@ a {
         /* margin-right: 3em;
         margin-left: 7.5em; */
     }
+    #abt1 {
+        flex-direction: column;
+    }
+
+    #tabs a {
+        font-size: medium;
+    }
+
+    #current-tab img {
+        width: 100px;
+    }
+
+    h1 {
+        font-size: 100%;
+    }
+
+    #resume {
+        flex-direction: column;
+    }
+
 }
